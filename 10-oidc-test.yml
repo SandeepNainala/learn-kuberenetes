@@ -17,7 +17,7 @@ spec:
   ServiceAccountName: test1
   containers:
   - name: debug
-    image: rkalluru/debug:centos7
+    image: rkalluru/loaded:centos8
 ---
 apiVersion: v1
 kind: pod
@@ -27,4 +27,4 @@ spec:
   ServiceAccountName: test2
   containers:
   - name: debug
-    image: rkalluru/debug:centos7
+    image: rkalluru/loaded:centos8
