@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: test1
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: test2
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: test1
+spec:
+  ServiceAccountName: test1
+  containers:
+  - name: debug
+    image: rkalluru/debug:centos7
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: test2
+spec:
+  ServiceAccountName: test2
+  containers:
+  - name: debug
+    image: rkalluru/debug:centos7
