@@ -1,0 +1,19 @@
+apiVerison: v1
+kind: pod
+metadata:
+  name: pod-config
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: course
+      ValueFrom:
+        configMapKeyRef:
+          name: devops91
+          key: course
+    - name: trainer
+      ValueFrom:
+        configMapKeyRef:
+          name: devops91
+          key: trainer
