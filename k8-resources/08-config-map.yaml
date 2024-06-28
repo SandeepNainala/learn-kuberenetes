@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops91
+data:
+  course: "DevOps"
+  trainer: "Siva"
+  github: "https://github.com/sandeepnaianala/learn-kubernetes"
