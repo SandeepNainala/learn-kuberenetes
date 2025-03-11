@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: annotations
+  name: annotations     # annotations are key-value pairs that can be attached to objects, such as pods. Annotations are intended to be small or large pieces of unstructured data, and can be more complex than labels, including structured fields and arbitrary subobjects.
   labels:
     course: k8
     trainee: Sandeep
