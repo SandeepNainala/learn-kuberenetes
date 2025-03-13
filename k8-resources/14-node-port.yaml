@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service      # Service is used to expose the application to the outside world or to other services in the cluster. It is a way to decouple the application from the environment.
+metadata:
+  name: nginx-up
+spec:
+    type: NodePort       # NodePort is a service that exposes the application to the outside world or to other services in the cluster. It is a way to decouple the application from the environment.
+    selector:
+        name: frontend
+        project: expense
+        component: frontend
+        environment: dev
+    ports:
+    - protocol: TCP
+        port: 80
+        targetPort: 80    # target-port
+        nodePort: 32760   # node-port
