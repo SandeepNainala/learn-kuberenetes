@@ -11,3 +11,19 @@ spec:
       driver: ebs.csi.aws.com
       fsType: ext4
       volumeHandle: vol-0a8f7b7b7b7b7b7b7     # volumeHandle is the volume ID of the EBS volume that you want to use.
+
+-------
+apiVersion: v1
+kind: PersistentVolumeClaim     # PersistentVolumeClaim is a request for storage by a user.
+metadata:
+  name: ebs-static
+spec:
+   storageClassName: ""    # storageClassName is the name of the StorageClass that you want to use.
+   volumeName: ebs-static
+   accessModes:
+     - ReadWriteOnce
+   resources:
+     requests:
+       storage: 5Gi
+
+------
