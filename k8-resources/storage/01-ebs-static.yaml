@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume     # PersistentVolume is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.
+metadata:
+  name: ebs-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    csi:
+      driver: ebs.csi.aws.com
+      fsType: ext4
+      volumeHandle: vol-0a8f7b7b7b7b7b7b7     # volumeHandle is the volume ID of the EBS volume that you want to use.
